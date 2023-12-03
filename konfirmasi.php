@@ -1,15 +1,5 @@
 <?php
-/*
-  | Source Code Aplikasi Rental Mobil PHP & MySQL
-  | 
-  | @package   : rental_mobil
-  | @file      : konfirmasi.php 
-  | @author    : faqoy@gmail.com
-  | 
-  | 
-  | 
-  | 
- */
+
 session_start();
 require 'koneksi/koneksi.php';
 include 'header.php';
