@@ -23,5 +23,3 @@ Password : user
 ## Website Online :
 
 mugilancartrans.my.id
-
-contoh
