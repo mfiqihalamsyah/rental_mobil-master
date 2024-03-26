@@ -119,6 +119,7 @@ if ($_GET['id'] == 'daftar') {
     $data[] = $_POST['user'];
     $data[] = md5($_POST['pass']);
     $data[] = 'pengguna';
+    $data[] = $_POST['user'];
 
     $row = $koneksi->prepare("SELECT * FROM login WHERE username = ?");
 
@@ -150,8 +151,8 @@ if ($_GET['id'] == 'daftar') {
         </script>';
     } else {
 
-        $sql = "INSERT INTO `login`(`nama_pengguna`, `username`, `password`, `level`)
-                VALUES (?,?,?,?)";
+        $sql = "INSERT INTO `login`(`nama_pengguna`, `username`, `password`, `level`, `NoSIM`)
+                VALUES (?,?,?,?,?)";
         $row = $koneksi->prepare($sql);
         $row->execute($data);
         echo '
