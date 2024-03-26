@@ -13,9 +13,13 @@ Login & Daftar Akun
 ## Untuk Login Admin :
 
 Username : admin
-Password : demo
+Password : admin
 
 ## Untuk Login Pengguna :
 
-Username : demo
-Password : demo
+Username : user
+Password : user
+
+## Website Online :
+
+mugilancartrans.my.id
