@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 18 Agu 2023 pada 16.08
+-- Waktu pembuatan: 26 Mar 2024 pada 09.27
 -- Versi server: 10.4.28-MariaDB
 -- Versi PHP: 8.1.17
 
@@ -44,6 +44,13 @@ CREATE TABLE `booking` (
   `tgl_input` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
+--
+-- Dumping data untuk tabel `booking`
+--
+
+INSERT INTO `booking` (`id_booking`, `kode_booking`, `id_login`, `id_mobil`, `ktp`, `img_ktp`, `nama`, `alamat`, `no_tlp`, `tanggal`, `lama_sewa`, `total_harga`, `konfirmasi_pembayaran`, `tgl_input`) VALUES
+(28, '1711441431', 2, 3, '321606201201', '1711441432.jpg', 'fiqih alamsyah', 'setiadarma', '0888888888', '2034-03-27', 3, 900507, 'Sedang di proses', '2024-03-26');
+
 -- --------------------------------------------------------
 
 --
@@ -65,7 +72,7 @@ CREATE TABLE `infoweb` (
 --
 
 INSERT INTO `infoweb` (`id`, `nama_rental`, `telp`, `alamat`, `email`, `no_rek`, `updated_at`) VALUES
-(1, 'Rental Guna', '6281213747234', 'Tambun Selatan, Kab. Bekasi ', 'Faqoy20@gmail.com', 'BRI A/N Muhammad Fiqih Alamsyah 08133416678', '2022-01-24 04:57:29');
+(1, 'ML Trans', '6281213747234', 'Tambun Selatan, Kab. Bekasi ', 'Faqoy20@gmail.com', 'BCA A/N Muhammad Fiqih Alamsyah 8851095993', '2022-01-24 04:57:29');
 
 -- --------------------------------------------------------
 
@@ -85,7 +92,7 @@ CREATE TABLE `landingpage` (
 --
 
 INSERT INTO `landingpage` (`id`, `title`, `subtitle`, `prom`) VALUES
-(1, 'MUGI LANCAR', 'Layanan Perjalanan Antar Kota', 'Aman - Nyaman - Ekonomis');
+(1, 'Mugi Lancar Transport', 'Layanan Perjalanan Antar Kota', 'Aman - Nyaman - Ekonomis');
 
 -- --------------------------------------------------------
 
@@ -98,16 +105,17 @@ CREATE TABLE `login` (
   `nama_pengguna` varchar(255) NOT NULL,
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `level` varchar(255) NOT NULL
+  `level` varchar(255) NOT NULL,
+  `NoSIM` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data untuk tabel `login`
 --
 
-INSERT INTO `login` (`id_login`, `nama_pengguna`, `username`, `password`, `level`) VALUES
-(1, 'faqoy', 'admin', '21232f297a57a5a743894a0e4a801fc3', 'admin'),
-(2, 'user', 'user', 'ee11cbb19052e40b07aac0ca060c23ee', 'pengguna');
+INSERT INTO `login` (`id_login`, `nama_pengguna`, `username`, `password`, `level`, `NoSIM`) VALUES
+(1, 'faqoy', 'admin', '21232f297a57a5a743894a0e4a801fc3', 'admin', ''),
+(2, 'user', 'user', 'ee11cbb19052e40b07aac0ca060c23ee', 'pengguna', '12');
 
 -- --------------------------------------------------------
 
@@ -155,6 +163,13 @@ CREATE TABLE `pembayaran` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
+-- Dumping data untuk tabel `pembayaran`
+--
+
+INSERT INTO `pembayaran` (`id_pembayaran`, `id_booking`, `no_rekening`, `nama_rekening`, `nominal`, `tanggal`, `bukti`) VALUES
+(29, 28, 2147483647, 'fiqih alamsyah', 900507, '2023-03-23', '1711441456.png');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -196,7 +211,7 @@ ALTER TABLE `pembayaran`
 -- AUTO_INCREMENT untuk tabel `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `id_booking` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id_booking` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT untuk tabel `landingpage`
@@ -208,7 +223,7 @@ ALTER TABLE `landingpage`
 -- AUTO_INCREMENT untuk tabel `login`
 --
 ALTER TABLE `login`
-  MODIFY `id_login` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id_login` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT untuk tabel `mobil`
@@ -220,7 +235,7 @@ ALTER TABLE `mobil`
 -- AUTO_INCREMENT untuk tabel `pembayaran`
 --
 ALTER TABLE `pembayaran`
-  MODIFY `id_pembayaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id_pembayaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
