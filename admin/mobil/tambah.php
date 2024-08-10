@@ -52,7 +52,7 @@ if (empty($_SESSION['USER'])) {
                                     <div class="col-sm-6">
 
                                         <div class="form-group row">
-                                            <label class="col-sm-3">No Plat</label>
+                                            <label class="col-sm-3">No Platttt ttttt</label>
                                             <input type="text" class="form-control col-sm-9" name="no_plat" placeholder="Isi No Plat">
                                         </div>
 
